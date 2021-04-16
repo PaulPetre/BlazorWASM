@@ -16,7 +16,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "ModalPopupWindowWASM": {
+    "BlazorWASM": {
       "commandName": "Project",
       "dotnetRunMessages": "true",
       "launchBrowser": true,
