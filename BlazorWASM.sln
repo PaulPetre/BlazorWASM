@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorWASM", "BlazorWASM\BlazorWASM.csproj", "{FC0D2CF5-5C52-4EDD-9BE5-CC3111357075}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorWASM", "BlazorWASM.csproj", "{8894CA8A-D666-4511-A42F-580438F37156}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{FC0D2CF5-5C52-4EDD-9BE5-CC3111357075}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FC0D2CF5-5C52-4EDD-9BE5-CC3111357075}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FC0D2CF5-5C52-4EDD-9BE5-CC3111357075}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FC0D2CF5-5C52-4EDD-9BE5-CC3111357075}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8894CA8A-D666-4511-A42F-580438F37156}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8894CA8A-D666-4511-A42F-580438F37156}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8894CA8A-D666-4511-A42F-580438F37156}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8894CA8A-D666-4511-A42F-580438F37156}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {1CBA3EFA-9FA1-4324-AD63-34056DE8786B}
+		SolutionGuid = {0E6BA71C-6ADE-41DD-9D59-63711EAD1C19}
 	EndGlobalSection
 EndGlobal
