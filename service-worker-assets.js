@@ -13,7 +13,7 @@
       "url": "BlazorBarcodeScanner.js"
     },
     {
-      "hash": "sha256-SO\/fuIIWUxoIu1OABrOpK5n\/AvzxJcg+0H3PT1eutAE=",
+      "hash": "sha256-DZJXZeBF4p9tjLpDVrph\/IK\/CMFhdYsNhiSCz99POM4=",
       "url": "css\/app.css"
     },
     {
@@ -69,7 +69,7 @@
       "url": "icon-512.png"
     },
     {
-      "hash": "sha256-ndXkljrfu+5dRr7\/CryuLWgonp3Oaev2gd5N6zmjNPo=",
+      "hash": "sha256-g4FTnPAIyZGTnPJ3G4I98bSo+qMX6ISSvnBqg\/DX4zA=",
       "url": "index.html"
     },
     {
@@ -341,5 +341,5 @@
       "url": "_framework\/blazor.webassembly.js"
     }
   ],
-  "version": "lLiqeZJR"
+  "version": "Lq8hDyh0"
 };
