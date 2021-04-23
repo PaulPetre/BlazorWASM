@@ -149,7 +149,11 @@
       "url": "_content\/BlazorBarcodeScanner.ZXing.JS\/zxingjs-0.17.1.index.min.js"
     },
     {
-      "hash": "sha256-ZHrca6YzpYdTuY2MeD6QD4e4QS5k8lN2jxsp0Pc7Jsk=",
+      "hash": "sha256-wxS3Gjt1Cfj8l+1w0KR2T9leynrXxh6RDdiprHqoI\/c=",
+      "url": "_content\/BlazorBarcodeScanner.ZXing.JS\/zxingjs-0.18.4.index.min.js"
+    },
+    {
+      "hash": "sha256-hxSyh4DBi1XZOQNRh70OaAaenxehpayalCoGRAoZrHQ=",
       "url": "_framework\/BlazorBarcodeScanner.ZXing.JS.dll"
     },
     {
@@ -225,7 +229,7 @@
       "url": "_framework\/System.IO.Pipelines.dll"
     },
     {
-      "hash": "sha256-fbEfJczbQt5AnBeu4QFT+jxK6BdPusFlV0LiIKdsNxc=",
+      "hash": "sha256-HxniHNXxBEmA8CDRrs9EQ1TVaFgnTf4D7EJfNde6kV4=",
       "url": "_framework\/BlazorWASM.dll"
     },
     {
@@ -333,7 +337,7 @@
       "url": "_framework\/System.Private.CoreLib.dll"
     },
     {
-      "hash": "sha256-1sJUAmFyNNUFbgDwJt22pbfr1ySaa8hwPWxyOWTbHb4=",
+      "hash": "sha256-jI7FXHB34UrjCirKI6fbiwOGJ+dl3t7MpCWHVCu76JA=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -341,5 +345,5 @@
       "url": "_framework\/blazor.webassembly.js"
     }
   ],
-  "version": "GohPTjcw"
+  "version": "duY9yogB"
 };
