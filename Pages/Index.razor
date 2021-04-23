@@ -1,18 +1,56 @@
 ﻿@page "/"
 @page "/modelExample"
 @inject IModalService Modal
-@using BlazorBarcodeScanner.ZXing.JS
+@using BlazorWASM
 
 
-<button class="btn btn-primary" @onclick="@(() => Modal.Show<BarcodeReader>("Modal Popup Example"))" >View </button>
+<button class="btn btn-primary" @onclick="@(() => Modal.Show<BarcodeReader>("Modal Popup Example"))">View </button>
 
+<h2>Stream resolution:</h2>
+(stop and start the stream to pickup new resolution)
+<table>
+    <tr>
+        <th>Width:</th>
+        <td><input style="width: 7em" @bind="StreamWidth" /></td>
+    </tr>
+    <tr>
+        <th>Height:</th>
+        <td><input style="width: 7em" @bind="StreamHeight" /></td>
+    </tr>
+</table>
+<button @onclick="() => _scanner.UpdateResolution()">Update stream</button>
+
+<BarcodeReader @ref="_scanner"
+               StartCameraAutomatically="true"
+               Title="Scanzor"
+               VideoWidth="600"
+               VideoHeigth="450"
+               StreamWidth="@StreamWidth"
+               StreamHeight="@StreamHeight" />
 @code
 {
+    //private string LocalBarcodeText;
+    //protected override async Task OnInitializedAsync()
+    //{
+    //    await base.OnInitializedAsync();
+    //    BlazorBarcodeScanner.ZXing.JS.JsInteropClass.BarcodeReceived += LocalReceivedBarcodeText; // attach to Barcodereceived event
+    //}
+
+    //private void LocalReceivedBarcodeText(BarcodeReceivedEventArgs args)
+    //{
+    //    this.LocalBarcodeText = args.BarcodeText;
+    //    StateHasChanged();
+    //}
+
+    private BarcodeReader _scanner;
+    private int StreamWidth = 640;
+    private int StreamHeight = 480;
+
     private string LocalBarcodeText;
     protected override async Task OnInitializedAsync()
     {
         await base.OnInitializedAsync();
-        BlazorBarcodeScanner.ZXing.JS.JsInteropClass.BarcodeReceived += LocalReceivedBarcodeText; // attach to Barcodereceived event
+        BlazorWASM.JsInteropClass.BarcodeReceived += LocalReceivedBarcodeText; // attach to Barcodereceived event
     }
 
     private void LocalReceivedBarcodeText(BarcodeReceivedEventArgs args)
