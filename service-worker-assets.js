@@ -9,7 +9,7 @@
       "url": "app.css"
     },
     {
-      "hash": "sha256-Bit9iHzIZg8WLlUCV7AO72UbMTNNN6TOr2yewv7uUv0=",
+      "hash": "sha256-Q34bV1jEfriHEut+KVukNoewIxnPmUE8jBerEdfzmKg=",
       "url": "BlazorBarcodeScanner.js"
     },
     {
@@ -229,7 +229,7 @@
       "url": "_framework\/System.IO.Pipelines.dll"
     },
     {
-      "hash": "sha256-HxniHNXxBEmA8CDRrs9EQ1TVaFgnTf4D7EJfNde6kV4=",
+      "hash": "sha256-fyZreoKvbg52fx1++9tlds095DUI+SUP0gJH4+lojjM=",
       "url": "_framework\/BlazorWASM.dll"
     },
     {
@@ -337,7 +337,7 @@
       "url": "_framework\/System.Private.CoreLib.dll"
     },
     {
-      "hash": "sha256-jI7FXHB34UrjCirKI6fbiwOGJ+dl3t7MpCWHVCu76JA=",
+      "hash": "sha256-3nQc5XPoMMinag2Kb\/7kiOZ1qFaVjY4rLPwgAgv+Pc8=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -345,5 +345,5 @@
       "url": "_framework\/blazor.webassembly.js"
     }
   ],
-  "version": "duY9yogB"
+  "version": "C5EtIKnw"
 };

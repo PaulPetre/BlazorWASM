@@ -8,9 +8,9 @@ async function mediaStreamSetTorch(track, onOff) {
     });
 }
 
-  /**
-   * Checks if the stream has torch support.
-   */
+/**
+ * Checks if the stream has torch support.
+ */
 function mediaStreamIsTorchCompatible(stream) {
 
     const tracks = stream.getVideoTracks();
@@ -40,11 +40,11 @@ function mediaStreamGetTorchCompatibleTrack(stream) {
     return null;
 }
 
-  /**
-   *
-   * @param track The media stream track that will be checked for compatibility.
-   */
-  function mediaStreamIsTorchCompatibleTrack(track) {
+/**
+ *
+ * @param track The media stream track that will be checked for compatibility.
+ */
+function mediaStreamIsTorchCompatibleTrack(track) {
     try {
         const capabilities = track.getCapabilities();
         return 'torch' in capabilities;
@@ -63,8 +63,32 @@ window.BlazorBarcodeScanner = {
     setSelectedDeviceId: function (deviceId) {
         this.selectedDeviceId = deviceId;
     },
+    streamWidth: 640,
+    streamHeight: 480,
+    setVideoResolution: function (width, height) {
+        this.streamWidth = width;
+        this.streamHeight = height;
+    },
+    getVideoConstraints: function () {
+        var videoConstraints = {};
+
+        if (!this.selectedDeviceId) {
+            videoConstraints["facingMode"] = 'environment';
+        }
+        else {
+            videoConstraints["deviceId"] = { exact: this.selectedDeviceId };
+        }
+
+        if (this.streamWidth) videoConstraints["width"] = { ideal: this.streamWidth };
+        if (this.streamHeight) videoConstraints["height"] = { ideal: this.streamHeight };
+
+        return videoConstraints;
+    },
     startDecoding: function (videoElementId) {
-        this.codeReader.decodeFromVideoDevice(this.selectedDeviceId, videoElementId, (result, err) => {
+        var videoConstraints = this.getVideoConstraints();
+
+        console.log("Starting decoding with " + videoConstraints);
+        this.codeReader.decodeFromConstraints({ video: videoConstraints }, videoElementId, (result, err) => {
             if (result) {
                 console.log(result);
                 DotNet.invokeMethodAsync('BlazorBarcodeScanner.ZXing.JS', 'ReceiveBarcode', result.text)
@@ -80,10 +104,10 @@ window.BlazorBarcodeScanner = {
                     });
             }
         });
-         
-      /*  this.codeReader.stream.getVideoTracks()[0].applyConstraints({
-            advanced: [{ torch: true }] // or false to turn off the torch
-        }); */
+
+        /*  this.codeReader.stream.getVideoTracks()[0].applyConstraints({
+              advanced: [{ torch: true }] // or false to turn off the torch
+          }); */
         console.log(`Started continous decode from camera with id ${selectedDeviceId}`);
     },
     stopDecoding: function () {
@@ -107,7 +131,7 @@ window.BlazorBarcodeScanner = {
     toggleTorch() {
         let track = mediaStreamGetTorchCompatibleTrack(this.codeReader.stream);
         if (track !== null) {
-            let torchStatus = track.getConstraints().torch ? false: true;
+            let torchStatus = track.getConstraints().torch ? false : true;
             mediaStreamSetTorch(track, torchStatus);
         }
     }
