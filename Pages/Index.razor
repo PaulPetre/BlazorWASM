@@ -1,56 +1,22 @@
 ﻿@page "/"
 @page "/modelExample"
 @inject IModalService Modal
-@using BlazorWASM
+@inject DialogService _dialogService
+@using BlazorBarcodeScanner.ZXing.JS
+@using DialogService = Radzen.DialogService
 
 
-<button class="btn btn-primary" @onclick="@(() => Modal.Show<BarcodeReader>("Modal Popup Example"))">View </button>
+<h1>Hello!</h1>
+<RadzenButton Text="Show dialog with inline Blazor content" Click="@ShowInlineDialog" />
+@*<button class="btn btn-primary" @onclick="@(() => Modal.Show<BarcodeReader>("Modal Popup Example"))">View </button>*@
 
-<h2>Stream resolution:</h2>
-(Stop and Start the stream to pickup new resolution)
-<table>
-    <tr>
-        <th>Width:</th>
-        <td><input style="width: 7em" @bind="StreamWidth" /></td>
-    </tr>
-    <tr>
-        <th>Height:</th>
-        <td><input style="width: 7em" @bind="StreamHeight" /></td>
-    </tr>
-</table>
-<button @onclick="() => _scanner.UpdateResolution()">Update stream</button>
-
-@*<BarcodeReader @ref="_scanner"
-               StartCameraAutomatically="true"
-               Title="Scanzor"
-               VideoWidth="600"
-               VideoHeigth="450"
-               StreamWidth="@StreamWidth"
-               StreamHeight="@StreamHeight" />*@
 @code
 {
-    //private string LocalBarcodeText;
-    //protected override async Task OnInitializedAsync()
-    //{
-    //    await base.OnInitializedAsync();
-    //    BlazorBarcodeScanner.ZXing.JS.JsInteropClass.BarcodeReceived += LocalReceivedBarcodeText; // attach to Barcodereceived event
-    //}
-
-    //private void LocalReceivedBarcodeText(BarcodeReceivedEventArgs args)
-    //{
-    //    this.LocalBarcodeText = args.BarcodeText;
-    //    StateHasChanged();
-    //}
-
-    private BarcodeReader _scanner;
-    private int StreamWidth = 640;
-    private int StreamHeight = 480;
-
     private string LocalBarcodeText;
     protected override async Task OnInitializedAsync()
     {
         await base.OnInitializedAsync();
-        JsInteropClass.BarcodeReceived += LocalReceivedBarcodeText; // attach to Barcodereceived event
+        JsInteropClass.BarcodeReceived += LocalReceivedBarcodeText;
     }
 
     private void LocalReceivedBarcodeText(BarcodeReceivedEventArgs args)
@@ -58,4 +24,15 @@
         this.LocalBarcodeText = args.BarcodeText;
         StateHasChanged();
     }
+
+    async Task ShowInlineDialog() => await _dialogService.OpenAsync("Simple Dialog", ds =>
+    @<div>
+        <div class="row">
+            <BlazorBarcodeScanner.ZXing.JS.BarcodeReader 
+                Title=""
+                VideoWidth="300"
+                VideoHeigth="200"
+                />
+        </div>
+    </div>);
 }

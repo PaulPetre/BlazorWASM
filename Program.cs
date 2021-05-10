@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Blazored.Modal;
 using MudBlazor.Services;
+using Radzen;
 
 namespace BlazorWASM
 {
@@ -22,6 +23,11 @@ namespace BlazorWASM
             builder.Services.AddBlazoredModal();
             builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
             builder.Services.AddMudServices();
+
+            builder.Services.AddScoped<DialogService>();
+            builder.Services.AddScoped<NotificationService>();
+            builder.Services.AddScoped<TooltipService>();
+            builder.Services.AddScoped<ContextMenuService>();
 
             await builder.Build().RunAsync();
         }
