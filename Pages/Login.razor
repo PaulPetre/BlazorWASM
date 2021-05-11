@@ -1,0 +1,33 @@
+﻿@page "/login"
+@inject NavigationManager NavManager
+@using Microsoft.EntityFrameworkCore
+
+
+<RadzenCard>
+    <RadzenTemplateForm Data=@("LoginWithRegisterAndReset")>
+        <RadzenLogin Login=@(args => OnLogin(args, "Login with register and password reset"))
+                     ResetPassword=@(args => OnResetPassword(args, "Login with register and password reset"))
+                     Register=@(args => OnRegister("Login with register and password reset")) Style="margin-bottom: 20px;" />
+    </RadzenTemplateForm>
+</RadzenCard>
+
+@code {
+    string userName = "admin";
+    string password = "admin";
+
+    void OnLogin(LoginArgs args, string name)
+    {
+        NavManager.NavigateTo("/");
+        //console.Log($"{name} -> Username: {args.Username} and password: {args.Password}");
+    }
+
+    void OnRegister(string name)
+    {
+        //console.Log($"{name} -> Register");
+    }
+
+    void OnResetPassword(string value, string name)
+    {
+        // console.Log($"{name} -> ResetPassword for user: {value}");
+    }
+}

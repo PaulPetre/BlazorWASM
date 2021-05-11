@@ -7,7 +7,7 @@
 
 
 <h1>Hello!</h1>
-<RadzenButton Text="Show dialog with inline Blazor content" Click="@ShowInlineDialog" />
+<RadzenButton Text="Scan" Click="@ShowInlineDialog" Style="background-color: #301c6b" />
 @*<button class="btn btn-primary" @onclick="@(() => Modal.Show<BarcodeReader>("Modal Popup Example"))">View </button>*@
 
 @code
@@ -28,16 +28,14 @@
     async Task ShowInlineDialog() => await _dialogService.OpenAsync("", ds =>
     @<div>
         <div class="row">
-            <BlazorBarcodeScanner.ZXing.JS.BarcodeReader 
-                Title="Scan"
-                StartCameraAutomatically="true"
-                ShowStart="false"
-                ShowReset="false"
-                ShowToggleTorch="false"
-                ShowVideoDeviceList="true"
-                VideoWidth="300"
-                VideoHeigth="200"
-                />
+            <BlazorBarcodeScanner.ZXing.JS.BarcodeReader Title=""
+                                                         StartCameraAutomatically="true"
+                                                         ShowStart="false"
+                                                         ShowReset="false"
+                                                         ShowToggleTorch="false"
+                                                         ShowVideoDeviceList="true"
+                                                         VideoWidth="300"
+                                                         VideoHeigth="200" />
         </div>
     </div>);
 }
