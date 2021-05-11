@@ -25,11 +25,16 @@
         StateHasChanged();
     }
 
-    async Task ShowInlineDialog() => await _dialogService.OpenAsync("Simple Dialog", ds =>
+    async Task ShowInlineDialog() => await _dialogService.OpenAsync("", ds =>
     @<div>
         <div class="row">
             <BlazorBarcodeScanner.ZXing.JS.BarcodeReader 
                 Title=""
+                StartCameraAutomatically="true"
+                ShowStart="false"
+                ShowReset="false"
+                ShowToggleTorch="false"
+                ShowVideoDeviceList="false"
                 VideoWidth="300"
                 VideoHeigth="200"
                 />
